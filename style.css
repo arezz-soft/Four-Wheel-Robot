@@ -637,6 +637,7 @@ section {
 }
 
 .team-card {
+    --card-accent: var(--cyan);
     width: 350px;
     background: var(--glass);
     border: 1px solid var(--glass-b);
@@ -701,6 +702,7 @@ section {
 }
 
 .supervisor-card {
+    --card-accent: var(--gold);
     border-color: rgba(255, 183, 0, 0.3);
     background: rgba(255, 183, 0, 0.05);
 }
@@ -966,13 +968,43 @@ section {
     }
 }
 
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .team-card {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .team-avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    .team-name {
+        color: var(--card-accent);
+        font-size: 1.2rem;
+        font-weight: 800;
+        text-transform: none; /* Keep original casing or capitalize? Target uses All Caps for HTML/CSS */
+        margin-bottom: 8px;
+    }
+
+    .team-role {
+        color: var(--white);
+        opacity: 1;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+}
+
 @media (max-width: 600px) {
     .materials-grid {
         grid-template-columns: 1fr;
-    }
-
-    .team-grid {
-        grid-template-columns: 1fr 1fr;
     }
 
     .p2-specs {
